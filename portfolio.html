@@ -1,44 +1,149 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Portfolio - Mon Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Style perso -->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: url("images/onepiece-table.jpg") no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+    }
+
+    .navbar {
+      background-color: transparent !important;
+    }
+
+    .nav-link, .navbar-brand {
+      color: white !important;
+    }
+
+    .nav-link:hover {
+      color: #fdd835 !important;
+    }
+
+    .hero {
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: #fdd835;
+      border-bottom: 3px solid #fdd835;
+      display: inline-block;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 8px #000;
+    }
+
+    .project-card {
+      background-color: rgba(0, 0, 0, 0.6);
+      border: 2px solid #fdd835;
+      border-radius: 12px;
+      padding: 1rem;
+      transition: transform 0.3s ease;
+      backdrop-filter: blur(3px);
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px #fdd835;
+    }
+
+    .btn-anime {
+      background-color: #ff5722;
+      border: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    .btn-anime:hover {
+      background-color: #e64a19;
+    }
+
+    h5 {
+      color: #fdd835;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    .opacity-bg {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 2rem;
+      border-radius: 12px;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- NAVBAR identique à index.html -->
+  <nav class="navbar navbar-dark bg-transparent fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="index.html">MonPortfolio</a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
-          <li class="nav-item"><a class="nav-link active" href="portfolio.html">Portfolio</a></li>
-        </ul>
-      </div>
+      <a class="navbar-brand" href="#">MonPortfolio</a>
+      <ul class="navbar-nav flex-row gap-3">
+        <li class="nav-item"><a class="nav-link text-white" href="about.html">À propos</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="portfolio.html">Portfolio</a></li>
+      </ul>
     </div>
   </nav>
 
-  <section class="container py-5">
-    <h2 class="mb-4">Mes Projets</h2>
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="images/projet1.jpg" class="card-img-top" alt="Projet 1">
-          <div class="card-body">
-            <h5 class="card-title">Projet 1</h5>
-            <p class="card-text">Une courte description du projet.</p>
-            <a href="#" class="btn btn-primary">Voir plus</a>
+  <!-- HERO identique à index.html -->
+  <header class="hero d-flex align-items-center justify-content-center text-center">
+    <div class="text-white">
+      <h1 class="display-3 fw-bold">Melvin Jocsan</h1>
+      <p class="lead">Développeur web passionné par les interfaces modernes</p>
+    </div>
+  </header>
+
+  <!-- SECTION PROJETS -->
+  <section class="container py-5 text-center">
+    <div class="opacity-bg">
+      <h2 class="section-title">Les îles de mes projets</h2>
+      <div class="row g-4 mt-3">
+        <!-- Projet 1 -->
+        <div class="col-md-4">
+          <div class="project-card h-100">
+            <img src="images/projet1.jpg" class="img-fluid rounded mb-3" alt="Projet 1">
+            <h5>Île du Codex</h5>
+            <p>App de stats pour joueurs fictifs façon Blue Lock. Un projet JS + REST API à l’esprit compétitif.</p>
+            <a href="#" class="btn btn-anime">Voir plus</a>
+          </div>
+        </div>
+        <!-- Projet 2 -->
+        <div class="col-md-4">
+          <div class="project-card h-100">
+            <img src="images/projet2.jpg" class="img-fluid rounded mb-3" alt="Projet 2">
+            <h5>Île de la Salle</h5>
+            <p>Suivi complet des entraînements, interface simple et rapide, comme un carnet de bord de l’équipage !</p>
+            <a href="#" class="btn btn-anime">Voir plus</a>
+          </div>
+        </div>
+        <!-- Projet 3 -->
+        <div class="col-md-4">
+          <div class="project-card h-100">
+            <img src="images/projet3.jpg" class="img-fluid rounded mb-3" alt="Projet 3">
+            <h5>Grand Line Portfolio</h5>
+            <p>Un site personnel où chaque projet est une île, chaque clic une aventure. Luffy-approved !</p>
+            <a href="#" class="btn btn-anime">Voir plus</a>
           </div>
         </div>
       </div>
-      <!-- Répète pour d’autres projets -->
     </div>
   </section>
 
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

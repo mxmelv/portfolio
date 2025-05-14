@@ -1,60 +1,225 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Mon Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Ton fichier CSS perso -->
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <title>Accueil - Mon Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Style perso -->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #000;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('images/image1.jpg') center/cover no-repeat;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .hero .text-white {
+      z-index: 1;
+      position: relative;
+    }
+
+    .project-transition {
+      height: 80px;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #000);
+    }
+
+    .project-card {
+      background-color: rgba(0, 0, 0, 0.6);
+      border: 2px solid #fdd835;
+      border-radius: 12px;
+      padding: 1rem;
+      transition: transform 0.3s ease;
+      backdrop-filter: blur(3px);
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px #fdd835;
+    }
+
+    .btn-anime {
+      background-color: #ff5722;
+      border: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    .btn-anime:hover {
+      background-color: #e64a19;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: #fdd835;
+      border-bottom: 3px solid #fdd835;
+      display: inline-block;
+      text-shadow: 2px 2px 8px #000;
+    }
+
+    #portfolio {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url('images/onepiece-table.jpg');
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    #portfolio::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    #portfolio > div {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Contenu ici -->
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Ton fichier JS perso -->
-  <script src="js/main.js"></script>
-
-
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-dark bg-transparent fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">MonPortfolio</a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
-          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-        </ul>
-      </div>
+      <ul class="navbar-nav flex-row gap-3">
+        <li class="nav-item"><a class="nav-link text-white" href="about.html">À propos</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#portfolio">Portfolio</a></li>
+      </ul>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header class="bg-primary text-white text-center py-5">
-    <div class="container">
-      <h1>Salut, je suis Jean Dupont</h1>
-      <p>Développeur web junior passionné par les interfaces modernes</p>
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="text-white">
+      <h1 class="display-3 fw-bold">Melvin Jocsan</h1>
+      <p class="lead">Développeur web passionné par les interfaces modernes</p>
     </div>
   </header>
 
-  <!-- Aperçu À propos / Portfolio -->
-  <section class="container py-4">
-    <div class="row">
-      <div class="col-md-6">
-        <h3>À propos de moi</h3>
-        <p>Mon parcours, mes compétences, mes aspirations.</p>
-        <a href="about.html" class="btn btn-outline-primary">Voir plus</a>
-      </div>
-      <div class="col-md-6">
-        <h3>Mes projets</h3>
-        <p>Découvrez ce que j'ai réalisé (ou imaginé !).</p>
-        <a href="portfolio.html" class="btn btn-outline-primary">Voir plus</a>
+  <!-- TRANSITION VERS PORTFOLIO -->
+  <div class="project-transition"></div>
+
+  <!-- SECTION PROJETS STYLE ONE PIECE -->
+<section id="portfolio" class="text-center py-5">
+  <div style="padding: 3rem; border-radius: 12px;">
+    <h2 class="section-title">Les îles de mes projets</h2>
+    <div class="container mt-5">
+      <div class="row g-4">
+
+        <!-- Projet 1 : The Codex Linux -->
+        <div class="col-md-4">
+          <div class="project-card h-100">
+            <img src="images/projet1.jpg" class="img-fluid rounded mb-3" alt="Projet The Codex Linux">
+            <h5 style="color: #fdd835;">Île du Codex Linux</h5>
+            <div class="d-flex flex-wrap justify-content-center gap-2 mb-2">
+              <span class="badge bg-warning text-dark">Golang</span>
+              <span class="badge bg-warning text-dark">MariaDB</span>
+              <span class="badge bg-warning text-dark">React</span>
+              <span class="badge bg-warning text-dark">CSS</span>
+              <span class="badge bg-warning text-dark">REST API</span>
+            </div>
+            <a href="details.html#codex" class="btn btn-anime">Voir plus</a>
+          </div>
+        </div>
+
+        <!-- Projet 2 : The Hyrule Gate (RPG) -->
+        <div class="col-md-4">
+          <div class="project-card h-100">
+            <img src="images/projet2.jpg" class="img-fluid rounded mb-3" alt="Projet RPG Hyrule">
+            <h5 style="color: #fdd835;">Île de Hyrule Gate</h5>
+            <div class="d-flex flex-wrap justify-content-center gap-2 mb-2">
+              <span class="badge bg-warning text-dark">Golang</span>
+              <span class="badge bg-warning text-dark">Algorithmie</span>
+              <span class="badge bg-warning text-dark">TypeScript</span>
+            </div>
+            <a href="details.html#hyrule" class="btn btn-anime">Voir plus</a>
+          </div>
+        </div>
+
+        <!-- Projet 3 : Vote App Docker -->
+        <div class="col-md-4">
+          <div class="project-card h-100">
+            <img src="images/projet3.jpg" class="img-fluid rounded mb-3" alt="Projet Vote App Docker">
+            <h5 style="color: #fdd835;">Île de Docker Vote</h5>
+            <div class="d-flex flex-wrap justify-content-center gap-2 mb-2">
+              <span class="badge bg-warning text-dark">Docker</span>
+              <span class="badge bg-warning text-dark">Redis</span>
+              <span class="badge bg-warning text-dark">PostgreSQL</span>
+              <span class="badge bg-warning text-dark">Traefik</span>
+              <span class="badge bg-warning text-dark">VirtualBox</span>
+            </div>
+            <a href="details.html#vote" class="btn btn-anime">Voir plus</a>
+          </div>
+        </div>
+
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+  <!-- Bootstrap + GSAP + JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animation d’apparition de la HERO section
+    gsap.from(".hero .text-white", {
+      opacity: 0,
+      y: 50,
+      duration: 1.2,
+      ease: "power3.out"
+    });
+
+    // Animation d'apparition des cartes projets
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.from("#portfolio .col-md-4", {
+        scrollTrigger: {
+          trigger: "#portfolio",
+          start: "top 80%"
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        stagger: 0.3
+      });
+    });
+  </script>
 </body>
 </html>
